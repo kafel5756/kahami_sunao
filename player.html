@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سنیں - کہانی سناؤ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="app-content">
+                <!-- ہیڈر -->
+                <div class="header simple-header">
+                    <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i></a>
+                    <h1>بہادر شہزادہ کی کہانی</h1>
+                </div>
+
+                <div class="screen-content">
+                    <!-- کہانی کا پلیئر -->
+                    <div class="story-player-card">
+                        <div class="story-meta">
+                            <span>@ahmad_storyteller</span>
+                            <span>25 منٹ</span>
+                        </div>
+                        <div class="audio-player-ui">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <span class="time-stamp">00:00 / 25:00</span>
+                        </div>
+                    </div>
+
+                    <!-- ایموجی ری ایکشنز -->
+                    <div class="reactions-section">
+                        <h3>آپ کا ردعمل؟</h3>
+                        <div class="emoji-reactions">
+                            <span class="emoji">❤️</span>
+                            <span class="emoji">😂</span>
+                            <span class="emoji">😢</span>
+                            <span class="emoji">👍</span>
+                            <span class="emoji">🔥</span>
+                        </div>
+                    </div>
+
+                    <!-- کمنٹس کا سیکشن -->
+                    <div class="comments-section">
+                        <h3>تبصرے (85)</h3>
+                        <!-- نیا کمنٹ کرنے کا فارم -->
+                        <div class="comment-form">
+                            <input type="text" id="commentInput" placeholder="اپنا تبصرہ لکھیں...">
+                            <button id="sendCommentBtn">بھیجیں</button>
+                        </div>
+                        
+                        <!-- کمنٹس کی لسٹ -->
+                        <div class="comments-list">
+                            <div class="comment-item">
+                                <img src="https://i.pravatar.cc/100?u=a" alt="avatar">
+                                <div class="comment-content">
+                                    <strong>علی خان</strong>
+                                    <p>واہ! بہت ہی شاندار کہانی تھی۔ مزہ آ گیا۔</p>
+                                </div>
+                            </div>
+                            <div class="comment-item">
+                                <img src="https://i.pravatar.cc/100?u=b" alt="avatar">
+                                <div class="comment-content">
+                                    <strong>ثنا جاوید</strong>
+                                    <p>آواز بہت اچھی ہے آپ کی۔ مزید کہانیوں کا انتظار رہے گا۔ 👍</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

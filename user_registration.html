@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سناؤ - Audio Stories App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 400px;
+            height: 700px;
+            background: #000;
+            border-radius: 25px;
+            padding: 15px 8px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .status-bar {
+            height: 35px;
+            background: linear-gradient(135deg, #6a4c93, #9b59b6);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .app-content {
+            flex: 1;
+            overflow-y: auto;
+            background: #fff;
+            position: relative;
+        }
+
+        /* Registration Screen */
+        .registration-screen {
+            padding: 30px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #6a4c93, #9b59b6);
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .app-logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .app-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .app-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .form-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 14px;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Main App Interface */
+        .main-interface {
+            display: none;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6a4c93, #9b59b6);
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        .user-points {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .screen-content {
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        /* Daily Reward Section */
+        .daily-reward {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .daily-reward h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .daily-reward p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .reward-boxes {
+            display: flex;
+            gap: 10px;
+        }
+
+        .reward-box {
+            flex: 1;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 15px 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .reward-box:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        .reward-box i {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .reward-box div {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #9b59b6;
+            font-size: 20px;
+        }
+
+        /* Top Stories */
+        .story-card {
+            background: white;
+            border-radius: 15px;
+            padding: 18px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #9b59b6;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #9b59b6, #6a4c93);
+        }
+
+        .story-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .story-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .story-points {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+        }
+
+        .story-meta {
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .story-user {
+            font-weight: 500;
+            color: #9b59b6;
+        }
+
+        .play-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .story-duration {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(155, 89, 182, 0.4);
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.6);
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(155, 89, 182, 0.1), transparent);
+            transition: transform 0.6s;
+            transform: rotate(45deg) translate(-100%, -100%);
+        }
+
+        .category-card:hover::before {
+            transform: rotate(45deg) translate(100%, 100%);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .category-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #9b59b6;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.2);
+            color: #8e44ad;
+        }
+
+        .category-name {
+            font-size: 13px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Record Button */
+        .record-btn {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .record-btn:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 12px 35px rgba(231, 76, 60, 0.6);
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 384px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            z-index: 999;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .nav-item.active {
+            color: #9b59b6;
+            background: rgba(155, 89, 182, 0.1);
+        }
+
+        .nav-item:hover {
+            color: #9b59b6;
+            transform: translateY(-2px);
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .nav-item span {
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        /* Recording Interface */
+        .recording-interface {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            z-index: 2000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .recording-header {
+            margin-bottom: 50px;
+        }
+
+        .recording-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .recording-subtitle {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .recording-controls {
+            margin: 50px 0;
+        }
+
+        .record-main-btn {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #e74c3c;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+        }
+
+        .record-main-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.6);
+        }
+
+        .record-main-btn.recording {
+            animation: recordPulse 1s infinite;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border-color: #27ae60;
+        }
+
+        .recording-timer {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #e74c3c;
+        }
+
+        .recording-info {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .close-recording {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes recordPulse {
+            0% { box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4); }
+            50% { box-shadow: 0 15px 40px rgba(39, 174, 96, 0.8); }
+            100% { box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4); }
+        }
+
+        .floating-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Success Messages */
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            z-index: 3000;
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .success-message.show {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .app-container {
+width: 100%;
+                height: 100vh;
+                border-radius: 0;
+                padding: 0;
+            }
+            
+            .screen {
+                border-radius: 0;
+            }
+            
+            .bottom-nav {
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>🕘 9:41</span>
+                <span>📶 📶 📶 🔋 85%</span>
+            </div>
+            
+            <div class="app-content">
+                <!-- Registration Screen -->
+                <div class="registration-screen" id="registrationScreen">
+                    <div class="app-logo">🎙️</div>
+                    <h1 class="app-title">کہانی سناؤ</h1>
+                    <p class="app-subtitle">آواز میں کہانیاں سنائیں اور پیسے کمائیں</p>
+                    
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label class="form-label">پورا نام</label>
+                            <input type="text" class="form-input" placeholder="اپنا پورا نام داخل کریں" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">یوزر نیم</label>
+                            <input type="text" class="form-input" placeholder="منفرد یوزر نیم منتخب کریں" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">موبائل نمبر</label>
+                            <input type="tel" class="form-input" placeholder="03001234567" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">شہر</label>
+                            <input type="text" class="form-input" placeholder="اپنا شہر داخل کریں" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">واپسی کا اکاؤنٹ</label>
+                            <select class="form-select" required>
+                                <option value="">منتخب کریں</option>
+                                <option value="jazzcash">JazzCash</option>
+                                <option value="easypaisa">EasyPaisa</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">اکاؤنٹ نمبر</label>
+                            <input type="text" class="form-input" placeholder="اپنا اکاؤنٹ نمبر داخل کریں" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">ریفرل کوڈ (اختیاری)</label>
+                            <input type="text" class="form-input" placeholder="دوست کا ریفرل کوڈ">
+                        </div>
+                        
+                        <button type="submit" class="register-btn">رجسٹر کریں</button>
+                    </form>
+                </div>
+
+                <!-- Main App Interface -->
+                <div class="main-interface" id="mainInterface">
+                    <div class="header">
+                        <div class="user-points" id="userPoints">
+                            <i class="fas fa-coins"></i> 2,450 پوائنٹس
+                        </div>
+                        <div class="header-content">
+                            <h1>کہانی سناؤ</h1>
+                            <p>آواز میں کہانیاں سنائیں اور پیسے کمائیں</p>
+                        </div>
+                    </div>
+
+                    <div class="screen-content">
+                        <!-- Daily Reward Section -->
+                        <div class="daily-reward">
+                            <h3>روزانہ انعام</h3>
+                            <p>اشتہار دیکھ کر پوائنٹس کمائیں</p>
+                            <div class="reward-boxes">
+                                <div class="reward-box" data-reward="10">
+                                    <i class="fas fa-gift"></i>
+                                    <div>10 پوائنٹس</div>
+                                </div>
+                                <div class="reward-box" data-reward="10">
+                                    <i class="fas fa-gift"></i>
+                                    <div>10 پوائنٹس</div>
+                                </div>
+                                <div class="reward-box" data-reward="10">
+                                    <i class="fas fa-gift"></i>
+                                    <div>10 پوائنٹس</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Top Stories Section -->
+                        <div class="section-title">
+                            <i class="fas fa-trophy"></i>
+                            <span>ٹاپ 5 کہانیاں</span>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-title">بہادر شہزادہ کی کہانی</div>
+                                <div class="story-points">1,250 پوائنٹس</div>
+                            </div>
+                            <div class="story-meta">
+                                <span class="story-user">@ahmad_storyteller</span>
+                                <div class="play-section">
+                                    <span class="story-duration">25 منٹ</span>
+                                    <button class="play-btn" data-story="story1">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-title">مزیدار لطیفہ مجموعہ</div>
+                                <div class="story-points">980 پوائنٹس</div>
+                            </div>
+                            <div class="story-meta">
+                                <span class="story-user">@funny_guy123</span>
+                                <div class="play-section">
+                                    <span class="story-duration">8 منٹ</span>
+                                    <button class="play-btn" data-story="story2">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-title">خوفناک رات کی کہانی</div>
+                                <div class="story-points">875 پوائنٹس</div>
+                            </div>
+                            <div class="story-meta">
+                                <span class="story-user">@horror_master</span>
+                                <div class="play-section">
+                                    <span class="story-duration">15 منٹ</span>
+                                    <button class="play-btn" data-story="story3">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-title">بچوں کی اخلاقی کہانی</div>
+                                <div class="story-points">720 پوائنٹس</div>
+                            </div>
+                            <div class="story-meta">
+                                <span class="story-user">@kids_stories</span>
+                                <div class="play-section">
+                                    <span class="story-duration">12 منٹ</span>
+                                    <button class="play-btn" data-story="story4">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-title">حضرت علی کا واقعہ</div>
+                                <div class="story-points">650 پوائنٹس</div>
+                            </div>
+                            <div class="story-meta">
+                                <span class="story-user">@islamic_stories</span>
+                                <div class="play-section">
+                                    <span class="story-duration">18 منٹ</span>
+                                    <button class="play-btn" data-story="story5">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categories Section -->
+                        <div class="section-title">
+                            <i class="fas fa-th-large"></i>
+                            <span>کیٹیگریز</span>
+                        </div>
+                        
+                        <div class="categories-grid">
+                            <div class="category-card floating-animation" data-category="moral">
+                                <div class="category-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <div class="category-name">سبق آموز کہانیاں</div>
+                            </div>
+
+                            <div class="category-card floating-animation" style="animation-delay: 0.5s;" data-category="horror">
+                                <div class="category-icon">
+                                    <i class="fas fa-ghost"></i>
+                                </div>
+                                <div class="category-name">خوفناک کہانیاں</div>
+                            </div>
+
+                            <div class="category-card floating-animation" style="animation-delay: 1s;" data-category="kids">
+                                <div class="category-icon">
+                                    <i class="fas fa-child"></i>
+                                </div>
+                                <div class="category-name">بچوں کی کہانیاں</div>
+                            </div>
+
+                            <div class="category-card floating-animation" style="animation-delay: 1.5s;" data-category="comedy">
+                                <div class="category-icon">
+                                    <i class="fas fa-laugh"></i>
+                                </div>
+                                <div class="category-name">لطیفے اور
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>

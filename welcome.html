@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سناؤ - خوش آمدید</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>9:41</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+            
+            <div class="welcome-container">
+                <div class="logo">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <h1>کہانی سناؤ</h1>
+                <p>اپنی آواز کی دنیا بنائیں</p>
+
+                <div class="button-container">
+                    <!-- رجسٹریشن بٹن -->
+                    <a href="user_registration.html" class="btn primary-btn">نیا اکاؤنٹ بنائیں</a>
+                    
+                    <!-- سائن ان بٹن (یہ آپ کے دیے گئے ہوم پیج پر جائے گا) -->
+                    <a href="signin.html" class="btn secondary-btn">سائن ان کریں</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+</body>
+</html>

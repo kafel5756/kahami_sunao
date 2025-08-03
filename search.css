@@ -1,0 +1,118 @@
+/* --- پچھلا سارا کوڈ یہاں موجود رہے گا --- */
+
+/* --- سرچ پیج کے لیے نئے اسٹائل --- */
+.search-bar-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-bar-container i {
+    position: absolute;
+    top: 50%;
+    right: 15px; /* RTL کے لیے right */
+    transform: translateY(-50%);
+    color: #95a5a6;
+}
+
+.search-bar-container input {
+    width: 100%;
+    padding: 12px 20px 12px 40px; /* RTL کے لیے padding */
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background-color: #f7f9f9;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #e9ecef;
+    border-radius: 25px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #566573;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: inherit;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-btn.active {
+    background-color: #1abc9c;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    color: #bdc3c7;
+}
+
+.empty-state i {
+    font-size: 4em;
+    margin-bottom: 15px;
+}
+
+.my-audio-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.my-audio-card .audio-title {
+    font-weight: bold;
+    color: #34495e;
+    flex-grow: 1;
+}
+
+.my-audio-card .audio-meta {
+    display: flex;
+    gap: 15px;
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin: 0 15px;
+}
+
+.my-audio-card .audio-meta i {
+    margin-left: 5px;
+}
+
+.my-audio-card .audio-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background: #ecf0f1;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.action-btn.edit-btn { color: #3498db; }
+.action-btn.delete-btn { color: #e74c3c; }
+.action-btn:hover { background-color: #bdc3c7; }

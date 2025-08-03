@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سناؤ - تلاش کریں</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>9:50</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+            
+            <div class="app-content">
+                <div class="header">
+                    <h1>تلاش کریں اور دریافت کریں</h1>
+                </div>
+
+                <div class="screen-content">
+                    <!-- سرچ بار -->
+                    <div class="search-bar-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="کہانی یا صارف تلاش کریں...">
+                    </div>
+
+                    <!-- ٹیبز -->
+                    <div class="tabs-container">
+                        <button class="tab-btn active" data-target="stories-content">کہانیاں</button>
+                        <button class="tab-btn" data-target="users-content">صارفین</button>
+                        <button class="tab-btn" data-target="my-audios-content">میری آڈیوز</button>
+                    </div>
+
+                    <!-- ٹیب کا مواد -->
+                    <div id="stories-content" class="tab-content">
+                        <!-- یہاں کہانیوں کے سرچ رزلٹ آئیں گے -->
+                        <div class="empty-state">
+                            <i class="fas fa-book-open"></i>
+                            <p>کسی کہانی کا عنوان لکھ کر تلاش کریں</p>
+                        </div>
+                    </div>
+
+                    <div id="users-content" class="tab-content hidden">
+                        <!-- یہاں صارفین کے سرچ رزلٹ آئیں گے -->
+                        <div class="empty-state">
+                            <i class="fas fa-users"></i>
+                            <p>کسی صارف کا یوزر نیم (@username) لکھ کر تلاش کریں</p>
+                        </div>
+                    </div>
+                    
+                    <div id="my-audios-content" class="tab-content hidden">
+                        <!-- یہاں صارف کی اپنی آڈیوز نظر آئیں گی -->
+                        <div class="my-audio-card">
+                            <span class="audio-title">بہادر شہزادہ کی کہانی</span>
+                            <div class="audio-meta">
+                                <span><i class="fas fa-star"></i> 1,250</span>
+                                <span><i class="fas fa-clock"></i> 25 منٹ</span>
+                            </div>
+                            <div class="audio-actions">
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="my-audio-card">
+                            <span class="audio-title">خوفناک رات کی کہانی</span>
+                            <div class="audio-meta">
+                                <span><i class="fas fa-star"></i> 875</span>
+                                <span><i class="fas fa-clock"></i> 15 منٹ</span>
+                            </div>
+                            <div class="audio-actions">
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <!-- اگر کوئی آڈیو نہیں ہے تو یہ دکھائیں
+                        <div class="empty-state">
+                            <i class="fas fa-microphone-slash"></i>
+                            <p>آپ نے ابھی تک کوئی آڈیو اپ لوڈ نہیں کی</p>
+                        </div>
+                        -->
+                    </div>
+                </div>
+
+                <!-- نیچے کا نیویگیشن -->
+                <div class="bottom-nav">
+                    <a href="index.html" class="nav-item">
+                        <i class="fas fa-home"></i> <span>ہوم</span>
+                    </a>
+                    <a href="search.html" class="nav-item active"> <!-- یہاں active کلاس لگائیں -->
+                        <i class="fas fa-search"></i> <span>تلاش</span>
+                    </a>
+                    <a href="referral.html" class="nav-item">
+                        <i class="fas fa-user-friends"></i> <span>ریفر</span>
+                    </a>
+                    <a href="withdraw.html" class="nav-item">
+                        <i class="fas fa-wallet"></i> <span>واپس لیں</span>
+                    </a>
+                    <a href="profile.html" class="nav-item">
+                        <i class="fas fa-user"></i> <span>پروفائل</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+    <script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* --- پچھلا سارا کوڈ یہاں موجود رہے گا --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+body, .phone-container, .screen, .status-bar, .welcome-container, .btn, .app-content, .header, .screen-content, .story-card, .bottom-nav {
+    /* آپ کے تمام پرانے اسٹائل یہاں موجود ہیں... میں صرف نیا کوڈ شامل کر رہا ہوں */
+}
+
+/* --- لاگ ان اسکرین کے لیے نئے اسٹائل --- */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    height: 100%;
+    color: #333;
+}
+
+.login-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1a5276;
+    margin-bottom: 30px;
+}
+
+.login-container form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #bdc3c7;
+    font-size: 1rem;
+    box-sizing: border-box;
+    text-align: right;
+    font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+.login-container .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    height: 20px; /* تاکہ ایرر نہ ہونے پر بھی جگہ نہ لے */
+}
+
+.extra-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.extra-links a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* --- باقی تمام پرانے اسٹائل یہاں موجود ہیں --- */

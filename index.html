@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سناؤ - Audio Stories App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>9:41</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+            
+            <div class="app-content">
+<!-- صرف ہیڈر کا حصہ -->
+<div class="header">
+    <!-- نیا یوزر ہیڈر یہاں شامل کیا گیا ہے -->
+    <div class="home-header-user">
+        <div class="user-info">
+            <span class="welcome-text">خوش آمدید،</span>
+            <span id="home-username">صارف</span>
+        </div>
+        <img src="https://i.pravatar.cc/150" alt="Avatar" class="avatar" id="home-avatar">
+    </div>
+</div>
+                <div class="header">
+                    <div class="user-points">
+                        <i class="fas fa-coins"></i> 2,450 Points
+                    </div>
+                    <h1>کہانی سناؤ</h1>
+                    <p>آواز میں کہانیاں سنائیں اور پیسے کمائیں</p>
+                </div>
+
+                <div class="screen-content">
+                    <!-- Daily Reward Section -->
+                    <div class="daily-reward">
+                        <h3>روزانہ انعام</h3>
+                        <p>اشتہار دیکھ کر پوائنٹس کمائیں</p>
+                        <div class="reward-boxes">
+                            <div class="reward-box">
+                                <i class="fas fa-gift"></i>
+                                <div>10 Points</div>
+                            </div>
+                            <div class="reward-box">
+                                <i class="fas fa-gift"></i>
+                                <div>10 Points</div>
+                            </div>
+                            <div class="reward-box">
+                                <i class="fas fa-gift"></i>
+                                <div>10 Points</div>
+                            </div>
+                        </div>
+                    </div>
+
+  <!-- ============================================== -->
+<!-- ٹاپ 5 کہانیوں کا نیا اور فکسڈ سیکشن             -->
+<!-- پرانے کوڈ کو اس سے مکمل طور پر تبدیل کر دیں       -->
+<!-- ============================================== -->
+<div class="top-stories">
+    <div class="section-title">
+        <i class="fas fa-trophy"></i>
+        <span>ٹاپ 5 کہانیاں</span>
+    </div>
+
+    <!-- کارڈ 1 -->
+    <div class="k-story-card">
+        <!-- اوپر والا حصہ -->
+        <div class="k-card-top">
+            <span class="k-story-title">بہادر شہزادہ کی کہانی</span>
+            <span class="k-story-points">1,250 پوائنٹس</span>
+        </div>
+        <!-- درمیانی حصہ -->
+        <div class="k-card-meta">
+            <span>@ahmad_storyteller</span>
+            <span><i class="fas fa-clock fa-fw"></i> 25 منٹ</span>
+        </div>
+        <!-- نیچے والا حصہ -->
+        <div class="k-card-bottom">
+            <div class="k-stats">
+                <span class="k-stat-item"><i class="fas fa-headphones-alt"></i> 5.6k</span>
+                <span class="k-stat-item"><i class="fas fa-comment"></i> 85</span>
+                <span class="k-stat-item"><i class="fas fa-heart"></i> 1.2k</span>
+            </div>
+            <a href="player.html" class="k-play-btn"><i class="fas fa-play"></i></a>
+        </div>
+    </div>
+
+    <!-- کارڈ 2 -->
+    <div class="k-story-card">
+        <div class="k-card-top">
+            <span class="k-story-title">مزیدار لطیفہ</span>
+            <span class="k-story-points">980 پوائنٹس</span>
+        </div>
+        <div class="k-card-meta">
+            <span>@funny_guy123</span>
+            <span><i class="fas fa-clock fa-fw"></i> 8 منٹ</span>
+        </div>
+        <div class="k-card-bottom">
+            <div class="k-stats">
+                <span class="k-stat-item"><i class="fas fa-headphones-alt"></i> 4.1k</span>
+                <span class="k-stat-item"><i class="fas fa-comment"></i> 50</span>
+                <span class="k-stat-item"><i class="fas fa-heart"></i> 950</span>
+            </div>
+            <a href="player.html" class="k-play-btn"><i class="fas fa-play"></i></a>
+        </div>
+    </div>
+
+    <!-- کارڈ 3 -->
+    <div class="k-story-card">
+        <div class="k-card-top">
+            <span class="k-story-title">خوفناک رات کی کہانی</span>
+            <span class="k-story-points">875 پوائنٹس</span>
+        </div>
+        <div class="k-card-meta">
+            <span>@horror_master</span>
+            <span><i class="fas fa-clock fa-fw"></i> 15 منٹ</span>
+        </div>
+        <div class="k-card-bottom">
+            <div class="k-stats">
+                <span class="k-stat-item"><i class="fas fa-headphones-alt"></i> 8.2k</span>
+                <span class="k-stat-item"><i class="fas fa-comment"></i> 120</span>
+                <span class="k-stat-item"><i class="fas fa-heart"></i> 2.5k</span>
+            </div>
+            <a href="player.html" class="k-play-btn"><i class="fas fa-play"></i></a>
+        </div>
+    </div>
+</div>
+
+                    <!-- Categories Section -->
+                    <div class="section-title">
+                        <i class="fas fa-th-large"></i>
+                        <span>کیٹیگریز</span>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-card floating-animation">
+                            <div class="category-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="category-name">سبق آموز</div>
+                        </div>
+
+                        <div class="category-card floating-animation" style="animation-delay: 0.5s;">
+                            <div class="category-icon">
+                                <i class="fas fa-ghost"></i>
+                            </div>
+                            <div class="category-name">خوفناک</div>
+                        </div>
+
+                        <div class="category-card floating-animation" style="animation-delay: 1s;">
+                            <div class="category-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <div class="category-name">بچوں کی</div>
+                        </div>
+
+                        <div class="category-card floating-animation" style="animation-delay: 1.5s;">
+                            <div class="category-icon">
+                                <i class="fas fa-laugh"></i>
+                            </div>
+                            <div class="category-name">لطیفے</div>
+                        </div>
+
+                        <div class="category-card floating-animation" style="animation-delay: 2s;">
+                            <div class="category-icon">
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <div class="category-name">شاعری</div>
+                        </div>
+
+                        <div class="category-card floating-animation" style="animation-delay: 2.5s;">
+                            <div class="category-icon">
+                                <i class="fas fa-mosque"></i>
+                            </div>
+                            <div class="category-name">اسلامی</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Record Button -->
+                <button class="record-btn pulse">
+                  <a href="record.html" /a>
+                    <i class="fas fa-microphone"></i>
+                </button>
+
+                <!-- Bottom Navigation -->
+                <div class="bottom-nav">
+                    <a href="index.html" class="nav-item active">
+                        <i class="fas fa-home"></i>
+                        <span>ہوم</span>
+                    </a>
+                    <a href="search.html" class="nav-item">
+                        <i class="fas fa-search"></i>
+                        <span>تلاش</span>
+                    </a>
+                    <a href="referral.html" class="nav-item">
+                        <i class="fas fa-user-friends"></i>
+                        <span>ریفر</span>
+                    </a>
+                    <a href="withdraw.html" class="nav-item">
+                        <i class="fas fa-wallet"></i>
+                        <span>واپس لیں</span>
+                    </a>
+                    <a href="profile.html" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span>پروفائل</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ================================================== -->
+<!--  ریکارڈنگ موڈل (یہ پہلے سے چھپا ہوا ہو گا)       -->
+<!--  اسے <body> ٹیگ کے آخر میں شامل کریں          -->
+<!-- ================================================== -->
+<div class="k-modal-overlay" id="recordModal">
+    <div class="k-modal-content">
+        <!-- موڈل کا ہیڈر -->
+        <div class="k-modal-header">
+            <h3>نئی کہانی ریکارڈ کریں</h3>
+            <button class="k-modal-close" id="closeModalBtn"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <!-- موڈل کا مواد (ریکارڈنگ انٹرفیس) -->
+        <div class="k-modal-body">
+            <!-- یہاں record.html والا UI آئے گا -->
+            <div class="k-recorder-ui" id="modalRecorderUI">
+                <div class="k-timer" id="modalTimer">00:00</div>
+                <div class="k-visualizer" id="modalVisualizer">
+                    <div class="k-bar"></div><div class="k-bar"></div><div class="k-bar"></div><div class="k-bar"></div><div class="k-bar"></div>
+                </div>
+                <p class="k-record-status" id="modalRecordStatus">ریکارڈنگ شروع کرنے کے لیے مائیک پر ٹیپ کریں</p>
+                
+                <div class="k-mic-container">
+                    <button class="k-mic-btn" id="modalMicBtn"><i class="fas fa-microphone"></i></button>
+                </div>
+                
+                <div class="k-controls" id="modalControls">
+                    <button class="k-control-btn" id="modalPauseResumeBtn"><i class="fas fa-pause"></i> توقف</button>
+                    <button class="k-control-btn stop" id="modalStopBtn"><i class="fas fa-stop"></i> روکیں</button>
+                </div>
+            </div>
+
+            <!-- تفصیلات کا فارم (یہاں بھی چھپا ہوا ہو گا) -->
+            <div class="k-details-form" id="modalDetailsForm">
+                <div class="form-group">
+                    <label for="modalStoryTitle">کہانی کا عنوان</label>
+                    <input type="text" id="modalStoryTitle" placeholder="یہاں عنوان لکھیں">
+                </div>
+                <div class="form-group">
+                    <label for="modalStoryCategory">کیٹیگری منتخب کریں</label>
+                    <select id="modalStoryCategory">
+                        <option value="">--- منتخب کریں ---</option>
+                        <option value="moral">سبق آموز</option>
+                        <option value="horror">خوفناک</option>
+                        <option value="kids">بچوں کی</option>
+                        <option value="jokes">لطیفے</option>
+                        <option value="poetry">شاعری</option>
+                        <option value="islamic">اسلامی</option>
+                    </select>
+                </div>
+                <div class="k-audio-preview" id="modalAudioPreview">
+                    <label>اپنی ریکارڈنگ سنیں</label>
+                    <audio id="modalAudioPlayer" controls></audio>
+                </div>
+                <button class="submit-btn" id="modalUploadBtn">کہانی اپ لوڈ کریں</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+    <script src="/script.js"></script>
+</body>
+</html>

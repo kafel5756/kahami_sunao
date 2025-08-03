@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی ریکارڈ کریں - کہانی سناؤ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="app-content">
+                <!-- سادہ ہیڈر -->
+                <div class="simple-header">
+                    <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i></a>
+                    <h1>نئی کہانی ریکارڈ کریں</h1>
+                </div>
+
+                <div class="screen-content k-record-page">
+                    <!-- ریکارڈنگ انٹرفیس -->
+                    <div class="k-recorder-ui">
+                        <div class="k-timer" id="timerDisplay">00:00</div>
+                        <div class="k-visualizer" id="visualizer">
+                            <div class="k-bar"></div><div class="k-bar"></div><div class="k-bar"></div><div class="k-bar"></div><div class="k-bar"></div>
+                        </div>
+                        <p class="k-record-status" id="recordStatus">ریکارڈنگ شروع کرنے کے لیے مائیک پر ٹیپ کریں</p>
+                        <div class="k-mic-container">
+                            <button class="k-mic-btn" id="micBtn"><i class="fas fa-microphone"></i></button>
+                        </div>
+                        <div class="k-controls" id="controlsContainer">
+                            <button class="k-control-btn" id="pauseResumeBtn"><i class="fas fa-pause"></i> توقف</button>
+                            <button class="k-control-btn stop" id="stopBtn"><i class="fas fa-stop"></i> روکیں</button>
+                        </div>
+                    </div>
+
+                    <!-- تفصیلات کا فارم (ریکارڈنگ کے بعد نظر آئے گا) -->
+                    <div class="k-details-form" id="detailsForm">
+                        <h3>کہانی کی تفصیلات</h3>
+                        <div class="form-group">
+                            <label for="storyTitle">کہانی کا عنوان</label>
+                            <input type="text" id="storyTitle" placeholder="یہاں عنوان لکھیں">
+                        </div>
+                        <div class="form-group">
+                            <label for="storyCategory">کیٹیگری منتخب کریں</label>
+                            <select id="storyCategory">
+                                <option value="">--- منتخب کریں ---</option>
+                                <option value="moral">سبق آموز</option>
+                                <option value="horror">خوفناک</option>
+                                <option value="kids">بچوں کی</option>
+                                <option value="jokes">لطیفے</option>
+                                <option value="poetry">شاعری</option>
+                                <option value="islamic">اسلامی</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                             <label for="storyDescription">مختصر تفصیل (اختیاری)</label>
+                             <textarea id="storyDescription" rows="3" placeholder="کہانی کس بارے میں ہے؟"></textarea>
+                        </div>
+
+                         <!-- آڈیو پریویو -->
+                        <div class="k-audio-preview" id="audioPreview">
+                            <label>اپنی ریکارڈنگ سنیں</label>
+                            <audio id="audioPlayer" controls></audio>
+                        </div>
+
+                        <button class="submit-btn" id="uploadBtn">کہانی اپ لوڈ کریں</button>
+                    </div>
+
+                    <!-- ہدایات کا باکس -->
+                    <div class="k-tips-box" id="tipsBox">
+                        <h4><i class="fas fa-lightbulb"></i> بہتر ریکارڈنگ کے لیے تجاویز</h4>
+                        <ul>
+                            <li>شور والی جگہ سے دور رہیں۔</li>
+                            <li>صاف اور واضح آواز میں بولیں۔</li>
+                            <li>کہانی پہلے سے سوچ کر رکھیں۔</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+    <script src="record.js"></script>
+</body>
+</html>

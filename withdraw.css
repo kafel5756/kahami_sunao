@@ -1,0 +1,125 @@
+/* --- Withdraw Page Styles --- */
+
+/* Withdraw Page کا مخصوص ہیڈر */
+.header.withdraw-header {
+    background: linear-gradient(135deg, #00b09b, #96c93d); /* نیا رنگ */
+    color: white;
+}
+
+/* Withdraw فارم کا کنٹینر */
+.withdraw-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
+
+/* معلومات کا باکس */
+.info-box {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    color: #0050b3;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.info-box p {
+    margin: 5px 0;
+}
+
+/* موجودہ بیلنس کا سیکشن */
+.current-balance {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.current-balance label {
+    font-weight: bold;
+    color: #555;
+}
+
+.current-balance .points {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00b09b; /* ہیڈر سے ملتا جلتا رنگ */
+}
+
+.current-balance .equivalent {
+    color: #555;
+    font-size: 14px;
+}
+
+/* فارم کے گروپس */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+    text-align: right;
+    font-size: 16px;
+}
+
+/* پیمنٹ میتھڈز */
+.payment-methods {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.payment-method.selected {
+    border-color: #00b09b;
+    background-color: #f0fdfa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 176, 155, 0.2);
+}
+
+.payment-method img {
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+/* جمع کروانے کا بٹن */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #00b09b, #96c93d);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}

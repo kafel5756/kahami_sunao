@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رقم نکلوائیں - کہانی سناؤ</title>
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- آپ کی مین اسٹائل شیٹ -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="withdraw.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>9:41</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+            
+            <div class="app-content">
+                <div class="header withdraw-header">
+                    <h1>رقم نکلوائیں</h1>
+                    <p>اپنی کمائی اپنے اکاؤنٹ میں منتقل کریں</p>
+                </div>
+
+                <div class="screen-content">
+                    <div class="withdraw-form">
+                        <!-- موجودہ بیلنس -->
+                        <div class="current-balance">
+                            <label>آپ کا موجودہ بیلنس</label>
+                            <div class="points">2,450 پوائنٹس</div>
+                            <div class="equivalent">(یعنی 245 روپے)</div>
+                        </div>
+
+                        <!-- ضروری معلومات کا باکس -->
+                        <div class="info-box">
+                            <p>کم از کم <b>1000 روپے</b> نکال سکتے ہیں۔</p>
+                            <p>رقم ہر <b>جمعرات</b> کو آپ کے اکاؤنٹ میں بھیجی جائے گی۔</p>
+                        </div>
+
+                        <!-- رقم کا ان پٹ -->
+                        <div class="form-group">
+                            <label for="amount">رقم (PKR میں)</label>
+                            <input type="number" id="withdrawAmount" placeholder="کم از کم 1000">
+                        </div>
+
+                        <!-- پیمنٹ میتھڈ -->
+                        <div class="form-group">
+                            <label>پیمنٹ کا طریقہ منتخب کریں</label>
+                            <div class="payment-methods">
+                                <div class="payment-method" data-method="easypaisa">
+                                    <img src="https://i.ibb.co/68g8g7z/easypaisa.png" alt="EasyPaisa">
+                                    <span>ایزی پیسہ</span>
+                                </div>
+                                <div class="payment-method" data-method="jazzcash">
+                                    <img src="https://i.ibb.co/QcYB1G4/jazzcash.png" alt="JazzCash">
+                                    <span>جاز کیش</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- اکاؤنٹ کی تفصیلات -->
+                        <div class="form-group">
+                            <label for="account-number">اکاؤنٹ نمبر</label>
+                            <input type="text" id="accountNumber" placeholder="مثال: 03123456789">
+                        </div>
+                        <div class="form-group">
+                            <label for="account-name">اکاؤنٹ ہولڈر کا نام</label>
+                            <input type="text" id="accountName" placeholder="اکاؤنٹ میں درج نام">
+                        </div>
+                        
+                        <!-- درخواست بھیجنے کا بٹن -->
+                        <button class="submit-btn" id="submitWithdrawBtn">درخواست بھیجیں</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- باٹم نیویگیشن -->
+            <div class="bottom-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>ہوم</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-search"></i>
+                    <span>تلاش</span>
+                </a>
+                <a href="referral.html" class="nav-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>ریفر</span>
+                </a>
+                <a href="withdraw.html" class="nav-item active"> <!-- اسے ایکٹو کیا ہے -->
+                    <i class="fas fa-wallet"></i>
+                    <span>واپس لیں</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>پروفائل</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script><!-- آپ کی جاوا اسکرپٹ فائل -->
+    <script src="withdraw.js"></script>
+</body>
+</html>

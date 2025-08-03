@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سناؤ - سائن ان</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="signin_style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>9:42</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+            
+            <div class="login-container">
+                <h2>سائن ان کریں</h2>
+                <form id="login-form">
+                    <input type="text" id="username" placeholder="یوزر نیم" required>
+                    <input type="password" id="password" placeholder="پاس ورڈ" required>
+                    <div id="error-message"></div>
+                    <button type="submit" class="btn primary-btn">لاگ ان کریں</button>
+                </form>
+<div class="extra-links">
+                    <!-- نیا لنک یہاں شامل کیا گیا ہے -->
+                    <a href="forgot_password.html">پاس ورڈ بھول گئے؟</a>
+                    <span>|</span>
+                    <a href="user_registration.html">اکاؤنٹ نہیں ہے؟</a>
+                </div>
+                <div class="extra-links">
+                    <a href="user_registration.html">اکاؤنٹ نہیں ہے؟ رجسٹر کریں</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+    <!-- جاوا اسکرپٹ فائل کو یہاں لنک کریں -->
+    <script src="signin.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سناؤ - میری پروفائل</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>9:48</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+            
+            <div class="app-content">
+
+    <!-- صرف پروفائل ہیڈر کا حصہ -->
+<div class="profile-header-card">
+    <div class="profile-pic">
+        <!-- آئیکن کی جگہ تصویر کا ٹیگ -->
+        <img src="https://i.pravatar.cc/150" alt="Profile Picture" id="profile-avatar">
+    </div>
+    <h2 class="profile-name" id="profile-name">صارف کا نام</h2>
+    <p class="profile-username" id="profile-username">@username</p>
+</div>
+<!-- باقی کوڈ ویسے ہی ہے -->            <div class="header">
+                    <h1>میری پروفائل</h1>
+                </div>
+
+                <div class="screen-content">
+                    
+                    <!-- پروفائل کی معلومات -->
+                    <div class="profile-header-card">
+                        <div class="profile-pic">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h2 class="profile-name">محمد احمد</h2>
+                        <p class="profile-username">@ahmad_storyteller</p>
+                    </div>
+
+                    <!-- اعداد و شمار (Stats) -->
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value">2,450</div>
+                            <div class="stat-label">کل پوائنٹس</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="profile-referral-count">12</div>
+                            <div class="stat-label">کل ریفرلز</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">میری کہانیاں</div>
+                        </div>
+                    </div>
+
+                    <!-- آپشنز (Options) -->
+                    <div class="profile-options-container">
+                        <div class="profile-option">
+                            <i class="fas fa-edit"></i>
+                            <span>پروفائل میں ترمیم کریں</span>
+                        </div>
+                        <div class="profile-option">
+                            <i class="fas fa-lock"></i>
+                            <span>پاس ورڈ تبدیل کریں</span>
+                        </div>
+                        <div class="profile-option logout" id="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>اکاؤنٹ سے لاگ آؤٹ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- نیچے کا نیویگیشن -->
+                <div class="bottom-nav">
+                    <a href="index.html" class="nav-item">
+                        <i class="fas fa-home"></i> <span>ہوم</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-search"></i> <span>تلاش</span>
+                    </a>
+                    <a href="referral.html" class="nav-item">
+                        <i class="fas fa-user-friends"></i> <span>ریفر</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-wallet"></i> <span>واپس لیں</span>
+                    </a>
+                    <a href="profile.html" class="nav-item active"> <!-- یہاں active کلاس لگائیں -->
+                        <i class="fas fa-user"></i> <span>پروفائل</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+    <script src="profile.js"></script>
+</body>
+</html>

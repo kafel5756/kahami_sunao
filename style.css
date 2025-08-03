@@ -1,0 +1,869 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.phone-container {
+    width: 360px;
+    height: 640px;
+    background: #000;
+    border-radius: 30px;
+    padding: 20px 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.status-bar {
+    height: 30px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 12px;
+    color: #333;
+}
+
+.app-content {
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    background: #fff;
+}
+
+.header {
+    background: linear-gradient(135deg, #6a4c93, #9b59b6);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.user-points {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.screen-content {
+    padding: 20px;
+}
+
+.top-stories {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: #9b59b6;
+}
+
+.story-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #9b59b6;
+    transition: transform 0.2s;
+}
+
+.story-card:hover {
+    transform: translateY(-2px);
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.story-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.story-points {
+    background: #e8f5e8;
+    color: #27ae60;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.story-meta {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.play-btn {
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.play-btn:hover {
+    background: #8e44ad;
+    transform: scale(1.1);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.category-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #9b59b6;
+}
+
+.category-name {
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    background: white;
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-item.active {
+    color: #9b59b6;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    font-size: 10px;
+}
+
+.record-btn {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+    transition: all 0.2s;
+    z-index: 100;
+}
+
+.record-btn:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.daily-reward {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.reward-boxes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.reward-box {
+    flex: 1;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reward-box:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.floating-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+/* --- پچھلا سارا کوڈ یہاں موجود رہے گا --- */
+
+/* --- ہوم پیج کے ہیڈر کے لیے نئے اسٹائل --- */
+.home-header-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+.home-header-user .user-info {
+    text-align: right;
+}
+.home-header-user .welcome-text {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+.home-header-user #home-username {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+}
+.home-header-user .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #1abc9c;
+    object-fit: cover;
+}
+
+/* --- پروفائل پیج کی تصویر کے لیے اپڈیٹ شدہ اسٹائل --- */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+/* --- Story Stats on Main Page --- */
+
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* آئیکن اور نمبر کے درمیان فاصلہ */
+    font-size: 14px;
+}
+
+.stat-item i {
+    color: #888;
+}
+
+.story-stats .play-btn {
+    margin-right: auto; /* پلے بٹن کو دائیں طرف دھکیلنے کے لیے */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}```
+/* --- Story Player & Comments Page Styles --- */
+.simple-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: white;
+    color: #333;
+    margin: -15px -15px 15px -15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.simple-header h1 { font-size: 20px; }
+.back-btn { color: #333; font-size: 20px; text-decoration: none;}
+
+.story-player-card, .reactions-section, .comments-section {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.audio-player-ui {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.play-icon { font-size: 40px; color: #2575fc; cursor: pointer; }
+.progress-bar-container { flex-grow: 1; height: 8px; background: #e0e0e0; border-radius: 5px;}
+.progress-bar { width: 30%; height: 100%; background: #2575fc; border-radius: 5px; }
+.time-stamp { font-size: 12px; color: #555; }
+
+.reactions-section h3, .comments-section h3 { margin-top: 0; margin-bottom: 15px; }
+.emoji-reactions { display: flex; justify-content: space-around; }
+.emoji { font-size: 28px; cursor: pointer; transition: transform 0.2s; }
+.emoji:hover { transform: scale(1.2); }
+
+.comment-form { display: flex; gap: 10px; margin-bottom: 20px; }
+.comment-form input {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+.comment-form button {
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.comment-item {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.comment-item:last-child { border-bottom: none; }
+.comment-item img { width: 40px; height: 40px; border-radius: 50%; }
+.comment-content strong { display: block; margin-bottom: 2px; }
+.comment-content p { margin: 0; color: #555; line-height: 1.4; }
+/* --- اسٹوری کارڈ کے لیے بہتر اسٹائلز --- */
+
+
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.story-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.story-points {
+    background-color: #e8f5e9;
+    color: #4caf50;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.story-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.story-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.story-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* یہ فوٹر کو نیچے رکھنے میں مدد کرے گا */
+}
+
+.stats-group {
+    display: flex;
+    gap: 15px; /* آئٹمز کے درمیان فاصلہ */
+    color: #555;
+    align-items: center;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.stat-item i {
+    color: #888;
+}
+
+.play-btn-link {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    flex-shrink: 0; /* بٹن کو سکڑنے سے روکتا ہے */
+    transition: transform 0.2s;
+}
+
+.play-btn-link:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/* ======================================== */
+/* کہانی کارڈ کے لیے نیا اور فکسڈ کوڈ        */
+/* پرانے اسٹائل کو اس سے مکمل طور پر تبدیل کر دیں */
+/* ======================================== */
+
+.k-story-card {
+    display: flex;
+    flex-direction: column; /* آئٹمز کو اوپر سے نیچے ترتیب دیں */
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    border: 1px solid #f0f0f0;
+    gap: 12px; /* حصوں کے درمیان فاصلہ */
+}
+
+/* --- اوپر والا حصہ: عنوان اور پوائنٹس --- */
+.k-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.k-story-title {
+    font-weight: bold;
+    font-size: 17px;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+.k-story-points {
+    background-color: #e9f9ee;
+    color: #27ae60;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0; /* اسے سکڑنے سے روکیں تاکہ لمبا ٹائٹل اسے خراب نہ کرے */
+}
+
+/* --- درمیانی حصہ: صارف اور دورانیہ --- */
+.k-card-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #888888;
+    font-size: 14px;
+}
+
+.k-card-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.k-card-meta .fa-clock {
+    margin-left: 4px; /* اردو میں دائیں طرف فاصلہ */
+}
+
+/* --- نیچے والا حصہ: اعداد و شمار اور پلے بٹن --- */
+.k-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f2f2f2; /* ایک ہلکی سی لائن شامل کریں */
+}
+
+.k-stats {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* آئیکنز کے درمیان فاصلہ */
+    color: #555;
+    flex-wrap: wrap; /* اگر جگہ کم ہو تو لائن توڑ دیں (احتیاطاً) */
+}
+
+.k-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.k-stat-item i {
+    color: #999999;
+     transition: color 0.2s ease;
+}
+
+.k-play-btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    flex-shrink: 0; /* بٹن کو سکڑنے سے روکیں */
+    transition: transform 0.2s;
+}
+
+.k-play-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/* ======================================== */
+/* ریکارڈنگ پیج کے لیے اسٹائلز              */
+/* ======================================== */
+.k-record-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.k-recorder-ui {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.k-timer {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.k-visualizer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    gap: 4px;
+    margin-bottom: 15px;
+}
+.k-bar {
+    width: 6px;
+    height: 10px;
+    background-color: #bdc3c7;
+    border-radius: 5px;
+    animation: quiet 1s linear infinite;
+}
+.k-recorder-ui.recording .k-bar {
+    animation: sound 0.5s linear infinite alternate;
+}
+.k-recorder-ui.recording .k-bar:nth-child(2) { animation-delay: -0.8s; }
+.k-recorder-ui.recording .k-bar:nth-child(3) { animation-delay: -0.5s; }
+.k-recorder-ui.recording .k-bar:nth-child(4) { animation-delay: -0.2s; }
+
+@keyframes sound {
+    0% { height: 10px; background-color: #3498db; }
+    100% { height: 50px; background-color: #e74c3c; }
+}
+@keyframes quiet {
+    0% { height: 10px; } 100% { height: 10px; }
+}
+
+
+.k-record-status {
+    color: #888;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+.k-mic-container {
+    margin-bottom: 20px;
+}
+.k-mic-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+    transition: all 0.2s ease;
+}
+.k-mic-btn:hover { transform: scale(1.05); }
+
+.k-mic-btn.recording {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+}
+
+.k-controls {
+    display: none; /* Initially hidden */
+    justify-content: center;
+    gap: 15px;
+}
+.k-recorder-ui.recording .k-controls,
+.k-recorder-ui.paused .k-controls {
+    display: flex; /* Show when recording or paused */
+}
+
+.k-control-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.k-control-btn.stop {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+.k-details-form {
+    display: none; /* Initially hidden */
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.k-audio-preview {
+    margin: 20px 0;
+}
+.k-audio-preview audio {
+    width: 100%;
+}
+
+.k-tips-box {
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    padding: 15px;
+    border-radius: 12px;
+}
+.k-tips-box h4 {
+    margin-top: 0;
+    color: #faad14;
+}
+.k-tips-box ul {
+    padding-right: 20px; /* For Urdu list */
+    margin-bottom: 0;
+    color: #555;
+}
+
+
+/* ======================================== */
+/* پروفیشنل ریکارڈنگ موڈل کے لیے اسٹائلز    */
+/* ======================================== */
+
+.k-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.k-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.k-modal-content {
+    background: #f4f4f8; /* ایپ کے بیک گراؤنڈ سے ملتا جلتا رنگ */
+    width: 90%;
+    max-width: 360px; /* فون کے سائز کے مطابق */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.k-modal-overlay.active .k-modal-content {
+    transform: scale(1);
+}
+
+.k-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.k-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.k-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+.k-modal-body {
+    padding: 20px;
+}
+
+/* موڈل کے اندر موجود ریکارڈنگ UI کے لیے اسٹائلز */
+#modalRecorderUI, #modalDetailsForm {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* چونکہ ریکارڈنگ UI پہلے سے اسٹائلڈ ہے، ہم صرف ان کو ریفر کریں گے */
+/* اگر کوئی مسئلہ ہو تو یہاں مخصوص اسٹائلز شامل کیے جا سکتے ہیں */
+.k-stat-item .fa-heart {
+    color: #e74c3c; /* خوبصورت سرخ رنگ */
+}
+
+/* کمنٹ کے آئیکن کے لیے مخصوص رنگ */
+.k-stat-item .fa-comment {
+    color: #3498db; /* نیلا رنگ */
+}
+
+/* ہیڈفون کے آئیکن کے لیے مخصوص رنگ */
+.k-stat-item .fa-headphones-alt {
+    color: #9b59b6; /* جامنی رنگ */

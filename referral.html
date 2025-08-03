@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کہانی سناؤ - دوستوں کو مدعو کریں</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="referral.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="status-bar">
+                <span>9:45</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+            
+            <div class="app-content">
+                <!-- ہیڈر -->
+                <div class="header">
+                    <h1>دوستوں کو مدعو کریں</h1>
+                    <p>ہر ریفرل پر 50 پوائنٹس حاصل کریں</p>
+                </div>
+
+                <!-- اسکرین کا مواد -->
+                <div class="screen-content">
+                    
+                    <!-- کسی کا کوڈ داخل کریں -->
+                    <div class="card">
+                        <h3>ریفرل کوڈ ہے؟</h3>
+                        <p class="info-text">اگر آپ کے دوست نے آپ کو مدعو کیا ہے تو اس کا کوڈ یہاں درج کر کے 50 پوائنٹس حاصل کریں۔</p>
+                        <form id="referral-code-form" class="input-with-button">
+                            <input type="text" id="friend-code" placeholder="دوست کا کوڈ">
+                            <button type="submit">جمع کرائیں</button>
+                        </form>
+                        <div id="referral-message" class="message"></div>
+                    </div>
+
+                    <!-- اپنا لنک شیئر کریں -->
+                    <div class="card">
+                        <h3>اپنا کوڈ شیئر کریں</h3>
+                        <p class="info-text">اپنا ریفرل لنک دوستوں کے ساتھ شیئر کریں. جب وہ رجسٹر ہوں گے تو آپ کو 50 پوائنٹس ملیں گے.</p>
+                        
+                        <div class="referral-link-box">
+                            <span id="user-referral-link">app.kahanisunao.com/ref/Abc12Xyz</span>
+                            <button id="copy-btn"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div id="copy-message" class="message"></div>
+                        
+                        <div class="social-share">
+                            <a href="#" id="whatsapp-share" class="social-icon whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" id="facebook-share" class="social-icon facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" id="twitter-share" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- نیچے کا نیویگیشن -->
+                <div class="bottom-nav">
+                    <a href="index.html" class="nav-item">
+                        <i class="fas fa-home"></i>
+                        <span>ہوم</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-search"></i>
+                        <span>تلاش</span>
+                    </a>
+                    <a href="referral.html" class="nav-item active"> <!-- یہاں active کلاس لگائیں -->
+                        <i class="fas fa-user-friends"></i>
+                        <span>ریفر</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-wallet"></i>
+                        <span>واپس لیں</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span>پروفائل</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAOHaufNNbYZii1iCe811TWmeAQEOabEwQ",
+    authDomain: "kahani-sunao.firebaseapp.com",
+    projectId: "kahani-sunao",
+    storageBucket: "kahani-sunao.firebasestorage.app",
+    messagingSenderId: "367578228179",
+    appId: "1:367578228179:web:02b78273a52896849f7b26"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+    <script src="referral_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* --- پچھلا سارا کوڈ یہاں موجود رہے گا --- */
+
+/* --- پروفائل پیج کے لیے نئے اسٹائل --- */
+.profile-header-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.profile-pic {
+    font-size: 80px;
+    color: #1abc9c;
+}
+
+.profile-name {
+    margin: 10px 0 5px 0;
+    color: #2c3e50;
+}
+
+.profile-username {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 1em;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+    font-family: sans-serif;
+}
+
+.stat-label {
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
+.profile-options-container {
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.profile-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.profile-option:hover {
+    background-color: #f7f9f9;
+}
+
+.profile-option i {
+    color: #1abc9c;
+    font-size: 1.2em;
+    width: 30px;
+    margin-left: 15px; /* RTL کے لیے margin-left */
+}
+
+.profile-option.logout i {
+    color: #e74c3c;
+}
+
+.profile-option.logout span {
+    color: #e74c3c;
+    font-weight: bold;
+}
